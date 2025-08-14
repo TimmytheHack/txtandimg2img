@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anime2d"
+version = "0.1.0"
+description = "Prompt→Live2D-style anime puppet"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "You" }]
+
+dependencies = [
+  "typer>=0.12,<0.13",
+  "pyyaml>=6.0.1"
+]
+
+[project.scripts]
+anime2d = "anime2d.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["anime2d*"]
+exclude = ["assets*", "models*", "outputs*", "third_party*", "configs*", "scripts*", "tests*"]

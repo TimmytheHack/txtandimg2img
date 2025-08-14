@@ -1,0 +1,63 @@
+seed: 123456
+sd:
+  model: waifu-diffusion/wd-1-5-beta3
+  steps: 28
+  guidance: 7.0
+  height: 768
+  width: 512
+  hires_fix: true
+  controlnets:
+    lineart: true
+    openpose: false
+  loras: []
+  negative: blurry, extra arms, side view, profile
+upscale:
+  impl: realesrgan-ncnn
+  model: realesrgan-x4plus-anime
+split:
+  use_sam2: true
+  use_anime_face_parse: true
+  post_morphology: true
+rig:
+  visemes:
+  - AA
+  - AE
+  - AH
+  - AO
+  - EH
+  - ER
+  - EY
+  - IH
+  - IY
+  - OW
+  - OY
+  - UH
+  - UW
+  - FV
+  - MB
+  physics:
+    hair_stiffness: 0.35
+    hair_damping: 0.12
+    gravity: 9.8
+tracking:
+  osf_fps: 30
+  smooth: 0.6
+  map:
+    mouth_open: ParamMouthOpen
+    blink_left: ParamEyeBlinkL
+    blink_right: ParamEyeBlinkR
+    brow_up: ParamBrowUpDown
+    head_yaw: ParamHeadYaw
+    head_pitch: ParamHeadPitch
+    head_roll: ParamHeadRoll
+voice:
+  tts: voicevox:JP_Zundamon
+  clone: openvoice:v2
+  loudness: -23
+export:
+  obs:
+    spout_sender: Inochi Session
+  unity:
+    lipsync: rhubarb
+  godot:
+    udp_port: 11573
